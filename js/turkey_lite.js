@@ -18,7 +18,7 @@ for (name in auditors) {
   if (auditors[name]) {
     $('<script />')
       .attr('type', 'text/javascript')
-      .attr('src', 'js/auditors' + name + '.js')
+      .attr('src', 'js/auditors/' + name + '.js')
       .appendTo('head')
   }
 }

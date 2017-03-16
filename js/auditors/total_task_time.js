@@ -1,9 +1,7 @@
 var AuditorTotalTaskTime = {
   start_date: new Date(),
   submit_callable: function() {
-    return {
-      'milliseconds': (new Date()).getTime() - this.start_date.getTime()
-    };
+    return (new Date()).getTime() - this.start_date.getTime();
   }
 };
 

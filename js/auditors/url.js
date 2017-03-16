@@ -3,9 +3,7 @@ var AuditorURL = {
     this.url = window.location.href;
   },
   submit_callable: function() {
-    return {
-      "url" : this.url
-    };
+    return this.url;
   }
 };
 

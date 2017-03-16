@@ -4,9 +4,7 @@ var AuditorUserAgent = {
     this.uas = navigator.userAgent;
   },
   submit_callable: function() {
-    return {
-      "user_agent" : this.uas
-    };
+    return this.uas;
   }
 }
 
