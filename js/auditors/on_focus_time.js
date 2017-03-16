@@ -15,9 +15,7 @@ var AuditorOnFocusTime = {
     var focus_change_time = (new Date()).getTime();
     this.on_focus_time += focus_change_time - this.last_focus_time;
 
-    return {
-      'milliseconds': this.on_focus_time
-    };
+    return this.on_focus_time;
   }
 };
 
@@ -31,3 +29,16 @@ document.addEventListener(
     .log_on_focus_time
     .bind(auditor_on_focus_time),
   false);
+
+$(document).ready(function() {
+  $(':submit').click(function() {
+    $('#mturk_form').submit(function() {
+      $('<input />')
+        .attr('type', 'hidden')
+        .attr('name', 'auditor_on_focus_time')
+        .attr('value', auditor_on_focus_time.submit_callable())
+        .appendTo('#mturk_form');
+      return true;
+    });
+  });
+});

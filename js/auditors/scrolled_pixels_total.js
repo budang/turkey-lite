@@ -27,10 +27,7 @@ var AuditorScrolledPixelsTotal = {
     }
   },
   submit_callable: function () {
-    return {
-      'horizontal': this.scrolled_pixels_total_h,
-      'vertical'  : this.scrolled_pixels_total_v
-    };
+    return this.scrolled_pixels_total_h + this.scrolled_pixels_total_v;
   }
 };
 
@@ -44,3 +41,16 @@ $(window).scroll(
       .bind(auditor_scrolled_pixels_total)();
   })
 );
+
+$(document).ready(function() {
+  $(':submit').click(function() {
+    $('#mturk_form').submit(function() {
+      $('<input />')
+        .attr('type', 'hidden')
+        .attr('name', 'auditor_scrolled_pixels_total')
+        .attr('value', auditor_scrolled_pixels_total.submit_callable())
+        .appendTo('#mturk_form');
+      return true;
+    });
+  });
+});

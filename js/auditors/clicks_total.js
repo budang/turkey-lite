@@ -4,17 +4,26 @@ var AuditorClicksTotal = {
     this.clicks_total += 1;
   },
   submit_callable: function () {
-    return {
-      'count': this.clicks_total
-    };
-    }
+    return this.clicks_total;
+  }
 };
 
 var auditor_clicks_total = Object.create(AuditorClicksTotal);
 
 $(document).ready(function() {
-    $(document).click(
-      auditor_clicks_total
-        .log_click_event
-        .bind(auditor_clicks_total));
+  $(document).click(
+    auditor_clicks_total
+      .log_click_event
+      .bind(auditor_clicks_total));
+
+  $(':submit').click(function() {
+    $('#mturk_form').submit(function() {
+      $('<input />')
+        .attr('type', 'hidden')
+        .attr('name', 'auditor_clicks_total')
+        .attr('value', auditor_clicks_total.submit_callable())
+        .appendTo('#mturk_form');
+      return true;
+    });
+  });
 });

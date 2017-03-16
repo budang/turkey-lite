@@ -12,9 +12,7 @@ var AuditorRecordedTimeDisparity = {
     }
   },
   submit_callable: function () {
-    return {
-      'milliseconds': ((new Date()).getTime() - this.start_date.getTime()) - this.on_focus_time
-    };
+    return ((new Date()).getTime() - this.start_date.getTime()) - this.on_focus_time;
   }
 };
 
@@ -28,3 +26,16 @@ document.addEventListener(
     .log_recorded_time_disparity
     .bind(auditor_recorded_time_disparity),
   false);
+
+$(document).ready(function() {
+  $(':submit').click(function() {
+    $('#mturk_form').submit(function() {
+      $('<input />')
+        .attr('type', 'hidden')
+        .attr('name', 'auditor_recorded_time_disparity')
+        .attr('value', auditor_recorded_time_disparity.submit_callable())
+        .appendTo('#mturk_form');
+      return true;
+    });
+  });
+});

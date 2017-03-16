@@ -12,14 +12,12 @@ var AuditorBeforeTypingDelay = {
     }
   },
   submit_callable: function () {
-    return {
-      'milliseconds':
-        this.first_typing_event_date
-        ?
-        this.first_typing_event_date.getTime() - this.start_date.getTime()
-        :
-        null
-    };
+    return
+      this.first_typing_event_date
+      ?
+      this.first_typing_event_date.getTime() - this.start_date.getTime()
+      :
+      null;
   }
 };
 
@@ -30,4 +28,15 @@ $(document).ready(function() {
     auditor_before_typing_delay
       .log_keydown_typing_event
       .bind(auditor_before_typing_delay));
+
+  $(':submit').click(function() {
+    $('#mturk_form').submit(function() {
+      $('<input />')
+        .attr('type', 'hidden')
+        .attr('name', 'auditor_before_typing_delay')
+        .attr('value', auditor_before_typing_delay.submit_callable())
+        .appendTo('#mturk_form');
+      return true;
+    });
+  });
 });

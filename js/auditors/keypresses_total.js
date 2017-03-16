@@ -4,9 +4,7 @@ var AuditorKeypressesTotal = {
     this.keypresses_total += 1;
   },
   submit_callable: function () {
-    return {
-      'count': this.keypresses_total
-    };
+    return this.keypresses_total;
   }
 };
 
@@ -17,4 +15,15 @@ $(document).ready(function() {
     auditor_keypresses_total
       .log_keypress_event
       .bind(auditor_keypresses_total));
+
+  $(':submit').click(function() {
+    $('#mturk_form').submit(function() {
+      $('<input />')
+        .attr('type', 'hidden')
+        .attr('name', 'auditor_keypresses_total')
+        .attr('value', auditor_keypresses_total.submit_callable())
+        .appendTo('#mturk_form');
+      return true;
+    });
+  });
 });
