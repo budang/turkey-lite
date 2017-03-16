@@ -1,3 +1,0 @@
-DJANGO_SETTINGS_MODULE=turkey.settings
-DATABASE_URL=postgres://django:django@postgres:5432/turkey
-DEBUG=1
