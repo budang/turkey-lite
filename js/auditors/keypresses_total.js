@@ -16,14 +16,11 @@ $(document).ready(function() {
       .log_keypress_event
       .bind(auditor_keypresses_total));
 
-  $(':submit').click(function() {
-    $('#mturk_form').submit(function() {
-      $('<input />')
-        .attr('type', 'hidden')
-        .attr('name', 'auditor_keypresses_total')
-        .attr('value', auditor_keypresses_total.submit_callable())
-        .appendTo('#mturk_form');
-      return true;
-    });
+  $("#mturk_form").submit(function() {
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "auditor_keypresses_total")
+      .attr("value", auditor_keypresses_total.submit_callable())
+      .appendTo("#mturk_form");
   });
 });

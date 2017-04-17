@@ -19,14 +19,11 @@ $(window).mousemove(
 );
 
 $(document).ready(function() {
-  $(':submit').click(function() {
-    $('#mturk_form').submit(function() {
-      $('<input />')
-        .attr('type', 'hidden')
-        .attr('name', 'auditor_mouse_movement_total')
-        .attr('value', auditor_mouse_movement_total.submit_callable())
-        .appendTo('#mturk_form');
-      return true;
-    });
+  $("#mturk_form").submit(function() {
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "auditor_mouse_movement_total")
+      .attr("value", auditor_mouse_movement_total.submit_callable())
+      .appendTo("#mturk_form");
   });
 });

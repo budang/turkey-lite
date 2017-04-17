@@ -23,14 +23,11 @@ document.addEventListener(
   false);
 
 $(document).ready(function() {
-  $(':submit').click(function() {
-    $('#mturk_form').submit(function() {
-      $('<input />')
-        .attr('type', 'hidden')
-        .attr('name', 'auditor_focus_changes_total')
-        .attr('value', auditor_focus_changes_total.submit_callable())
-        .appendTo('#mturk_form');
-      return true;
-    });
+  $("#mturk_form").submit(function() {
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "auditor_focus_changes_total")
+      .attr("value", auditor_focus_changes_total.submit_callable())
+      .appendTo("#mturk_form");
   });
 })

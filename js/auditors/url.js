@@ -12,14 +12,11 @@ var auditor_url = Object.create(AuditorURL);
 $(document).ready(function() {
   auditor_url.get_url();
 
-  $(':submit').click(function() {
-    $('#mturk_form').submit(function() {
-      $('<input />')
-        .attr('type', 'hidden')
-        .attr('name', 'auditor_url')
-        .attr('value', auditor_url.submit_callable())
-        .appendTo('#mturk_form');
-      return true;
-    });
+  $("#mturk_form").submit(function() {
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "auditor_url")
+      .attr("value", auditor_url.submit_callable())
+      .appendTo("#mturk_form");
   });
 });

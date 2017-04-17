@@ -17,14 +17,11 @@ $(document).ready(function() {
       .log_paste_event
       .bind(auditor_pastes_total));
 
-  $(':submit').click(function() {
-    $('#mturk_form').submit(function() {
-      $('<input />')
-        .attr('type', 'hidden')
-        .attr('name', 'auditor_pastes_total')
-        .attr('value', auditor_pastes_total.submit_callable())
-        .appendTo('#mturk_form');
-      return true;
-    });
+  $("#mturk_form").submit(function() {
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "auditor_pastes_total")
+      .attr("value", auditor_pastes_total.submit_callable())
+      .appendTo("#mturk_form");
   });
 });

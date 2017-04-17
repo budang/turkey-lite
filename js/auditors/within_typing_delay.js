@@ -28,14 +28,11 @@ $(document).ready(function() {
       .log_keydown_typing_event
       .bind(auditor_within_typing_delay));
 
-  $(':submit').click(function() {
-    $('#mturk_form').submit(function() {
-      $('<input />')
-        .attr('type', 'hidden')
-        .attr('name', 'auditor_within_typing_delay')
-        .attr('value', auditor_within_typing_delay.submit_callable())
-        .appendTo('#mturk_form');
-      return true;
-    });
+  $("#mturk_form").submit(function() {
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "auditor_within_typing_delay")
+      .attr("value", auditor_within_typing_delay.submit_callable())
+      .appendTo("#mturk_form");
   });
 });
