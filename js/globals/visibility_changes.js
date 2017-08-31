@@ -1,4 +1,5 @@
 // helper script file for focus_change auditors
+// https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
 
 // Set the name of the hidden property and the change event for visibility
 var hidden, visibility_change; 
