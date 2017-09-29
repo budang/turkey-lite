@@ -1,4 +1,4 @@
-var AuditorBeforeTypingDelay = {
+AuditorBeforeTypingDelay = {
   start_date: new Date(),
   first_typing_event_date: null,
   log_keydown_typing_event: function (e) {

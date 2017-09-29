@@ -1,4 +1,4 @@
-var AuditorWithinTypingDelay = {
+AuditorWithinTypingDelay = {
   start_date: new Date(),
   first_typing_event_date: null,
   typing_delay: 10000, // milliseconds
@@ -9,10 +9,12 @@ var AuditorWithinTypingDelay = {
     }
   },
   log_paste_typing_event: function(e) {
-    this.first_typing_event_date = new Date();
+    if (!this.first_typing_event_date) {
+      this.first_typing_event_date = new Date();
+    }
   },
   submit_callable: function () {
-    return 
+    return
       this.first_typing_event_date
       ?
       (this.first_typing_event_date.getTime() -
@@ -25,10 +27,16 @@ var AuditorWithinTypingDelay = {
 var auditor_within_typing_delay = Object.create(AuditorWithinTypingDelay);
 
 $(document).ready(function() {
-  $("input:text, textarea").keydown(
-    auditor_within_typing_delay
-      .log_keydown_typing_event
-      .bind(auditor_within_typing_delay));
+  $("input:text, textarea")
+    .keydown(
+      auditor_within_typing_delay
+        .log_keydown_typing_event
+        .bind(auditor_within_typing_delay))
+    .bind(
+      "paste",
+      auditor_within_typing_delay
+        .log_paste_typing_event
+        .bind(auditor_within_typing_delay));
 
   $("#mturk_form").submit(function() {
     $("<input />")
