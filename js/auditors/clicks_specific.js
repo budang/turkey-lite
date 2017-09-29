@@ -23,8 +23,8 @@ var auditor_clicks_specific = Object.create(AuditorClicksSpecific);
 
 $(document).ready(function() {
   $(document).click(
-    auditor_clicks_total
-      .log_click_event
+    auditor_clicks_specific
+      .log_click_content
       .bind(auditor_clicks_specific));
 
   $("#mturk_form").submit(function() {

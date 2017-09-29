@@ -15,7 +15,7 @@ var AuditorPastesSpecific = {
 var auditor_pastes_specific = Object.create(AuditorPastesSpecific);
 
 $(document).ready(function() {
-  $(document).bind(
+  $("input:text, textarea").bind(
     "paste",
     function(e) {
       auditor_pastes_specific

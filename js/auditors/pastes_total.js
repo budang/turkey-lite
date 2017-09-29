@@ -11,7 +11,7 @@ var AuditorPastesTotal = {
 var auditor_pastes_total = Object.create(AuditorPastesTotal);
 
 $(document).ready(function() {
-  $(document).bind(
+  $("input:text, textarea").bind(
     "paste",
     auditor_pastes_total
       .log_paste_event

@@ -3,18 +3,20 @@ var AuditorWithinTypingDelay = {
   first_typing_event_date: null,
   typing_delay: 10000, // milliseconds
   log_keydown_typing_event: function (e) {
-    if (!this.first_typing_event_date
-      && e.keyCode >= 65
-      && e.keyCode <= 90) {
+    if (!this.first_typing_event_date && e.key.length === 1
+      && !e.ctrlKey && !e.metaKey && !e.altKey) {
       this.first_typing_event_date = new Date();
     }
+  },
+  log_paste_typing_event: function(e) {
+    this.first_typing_event_date = new Date();
   },
   submit_callable: function () {
     return 
       this.first_typing_event_date
       ?
-      ((this.first_typing_event_date.getTime() -
-        this.start_date.getTime()) < this.typing_delay).toString()
+      (this.first_typing_event_date.getTime() -
+        this.start_date.getTime()) < this.typing_delay
       :
       null;
   }
@@ -23,7 +25,7 @@ var AuditorWithinTypingDelay = {
 var auditor_within_typing_delay = Object.create(AuditorWithinTypingDelay);
 
 $(document).ready(function() {
-  $(document).keydown(
+  $("input:text, textarea").keydown(
     auditor_within_typing_delay
       .log_keydown_typing_event
       .bind(auditor_within_typing_delay));
