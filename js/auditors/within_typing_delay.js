@@ -1,22 +1,17 @@
 var AuditorWithinTypingDelay = {
   start_date: new Date(),
-  first_typing_event_date: null,
+  within_typing_delay: null,
   typing_delay: 10000, // milliseconds
   log_keydown_typing_event: function (e) {
-    if (!this.first_typing_event_date
+    if (!this.within_typing_delay
       && e.keyCode >= 65
       && e.keyCode <= 90) {
-      this.first_typing_event_date = new Date();
+      this.within_typing_delay =
+        (new Date().getTime() - this.start_date.getTime()) < this.typing_delay;
     }
   },
   submit_callable: function () {
-    return 
-      this.first_typing_event_date
-      ?
-      ((this.first_typing_event_date.getTime() -
-        this.start_date.getTime()) < this.typing_delay).toString()
-      :
-      null;
+    return this.within_typing_delay;
   }
 };
 
