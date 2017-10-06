@@ -14,12 +14,13 @@ AuditorWithinTypingDelay = {
     }
   },
   submit_callable: function () {
-   var val = this.first_typing_event_date
+    var val = this.first_typing_event_date		
       ?
-      this.first_typing_event_date.getTime() - this.start_date.getTime()
+      (this.first_typing_event_date.getTime() - this.start_date.getTime())
+        < this.typing_delay		
       :
       null;
-
+ 
     return val;
   }
 };
