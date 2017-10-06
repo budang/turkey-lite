@@ -11,7 +11,7 @@ var AuditorMouseMovementSpecific = {
     );
   },
   submit_callable: function () {
-    return JSON.stringify(this.mouse_movement_specific);
+    return this.mouse_movement_specific;
   }
 };
 

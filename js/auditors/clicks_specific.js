@@ -15,7 +15,7 @@ var AuditorClicksSpecific = {
     this.clicks_specific.push(dom);
   },
   submit_callable: function () {
-    return JSON.stringify(this.clicks_specific);
+    return this.clicks_specific;
   }
 };
 

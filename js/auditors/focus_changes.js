@@ -9,7 +9,7 @@ var AuditorFocusChanges = {
     }
   },
   submit_callable: function () {
-    return JSON.stringify(this.focus_changes);
+    return this.focus_changes;
   }
 };
 

@@ -1,11 +1,10 @@
-# MmmTurkey
-A framework for data collection of worker behavior for Mechanical Turk (or other) tasks. Examples of such *auditors* include recording what someone clicks or when s/he changes tab focus.
+# turkey-lite
+A JavaScript-only spin-off of the [MmmTurkey](https://github.com/CuriousG102/turkey/) framework for data collection of worker behavior for Amazon Mechanical Turk (AMT). Examples of such *auditors* include recording what someone clicks or when s/he changes tab focus. Unlike the original framework, **turkey-lite** does not require additional setup and can be invoked directly as a script tag in the task HTML file. Results are stored directly in the CSV file where worker-submitted answers would also be recorded. For an example of **turkey-lite** in use, see [here](https://github.com/ambikaverma/CrowdSourcing-Project-MachineAssistedApproach/tree/master/object_detection/correction). **turkey-lite** was developed as a lightweight alternative to MmmTurkey. Unlike MmmTurkey, **turkey-lite** as-is can only be used on AMT but can be easily changed to be used with other platforms; the data-collection code itself is not platform-specific, only the way the data is saved and stored. Some possible options are saving data to S3, DynamoDB, Mongodb, etc. MmmTurkey provides more structure and organization in terms of data storage and collection, but for some the simpler **turkey-lite** may be sufficient. **turkey-lite** was developed and tested using the [AWS/AMT command-line-tools](https://requester.mturk.com/developer/tools/clt).
 
-- A more detailed description of the framework can be found [here](https://curiousg102.github.io/turkey/index.html#mmmturkey), and a list of its features can be found [here](https://curiousg102.github.io/turkey/features.html). Additionally, you can read our paper [here](https://arxiv.org/abs/1609.00945).
-  - A complete list of *auditors* and their descriptions can be found [here](https://curiousg102.github.io/turkey/stepsauditors.html#auditors).
-  - Instructions for setup (for data collection or local development) can be found [here](https://curiousg102.github.io/turkey/setup.html).
-  - General documentation can be found [here](https://curiousg102.github.io/turkey/index.html).
-- Pull requests may be submitted [here](https://github.com/CuriousG102/turkey/pulls).
-- Issues may be submitted [here](https://github.com/CuriousG102/turkey/issues).
 
-Written by [Miles Hutson](https://github.com/CuriousG102) and [Brandon Dang](https://github.com/budang).
+- A more detailed description of the original framework can be found [here](https://curiousg102.github.io/turkey/index.html#mmmturkey), and a list of its features can be found [here](https://curiousg102.github.io/turkey/features.html). Additionally, you can read our paper [here](https://arxiv.org/abs/1609.00945).
+- A complete list of *auditors* and their descriptions can be found [here](https://curiousg102.github.io/turkey/stepsauditors.html#auditors).
+- Pull requests may be submitted [here](https://github.com/budang/turkey-lite/pulls).
+- Issues and questions may be submitted [here](https://github.com/budang/turkey-lite/issues).
+
+The original MmmTurkey was written by [Miles Hutson](https://github.com/CuriousG102) and [Brandon Dang](https://github.com/budang).

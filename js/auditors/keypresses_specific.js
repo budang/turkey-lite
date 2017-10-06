@@ -8,7 +8,7 @@ var AuditorKeypressesSpecific = {
     });
   },
   submit_callable: function () {
-    return JSON.stringify(this.keypresses_specific);
+    return this.keypresses_specific;
   }
 };
 
