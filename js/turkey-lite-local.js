@@ -20,22 +20,21 @@ var auditors = {
   "user_agent": true
 }
 
-/* https://rawgit.com/ */
-var base = "https://raw.githubusercontent.com/budang/turkey-lite/master/js/";
+$("<script />")
+  .attr("type", "text/javascript")
+  .attr("src", "js/turkey-lite/js/resources/jquery.ba-throttle-debounce.min.js")
+  .appendTo("head");
 
-$.ajax({
-    async: false,
-    url: base + "resources/jquery.ba-throttle-debounce.min.js",
-    dataType: "script"
-});
-
-$.ajax({
-    async: false,
-    url: base + "resources/visibility_changes.js",
-    dataType: "script"
-});
+$("<script />")
+  .attr("type", "text/javascript")
+  .attr("src", "js/turkey-lite/js/resources/visibility_changes.js")
+  .appendTo("head");
 
 for (var name in auditors) {
-  $.getScript(base + "auditors/" + name + ".js");
+  if (auditors[name]) {
+    $("<script />")
+      .attr("type", "text/javascript")
+      .attr("src", "js/turkey-lite/js/auditors/" + name + ".js")
+      .appendTo("head");
+  }
 }
-
