@@ -22,20 +22,13 @@ var auditors = {
 
 /* https://rawgit.com/ */
 var base = "https://rawgit.com/budang/turkey-lite/master/js/";
+var promises =
+  [$.getScript(base + "resources/jquery.ba-throttle-debounce.min.js"),
+  $.getScript(base + "resources/visibility_changes.js")];
 
-$.ajax({
-    async: false,
-    url: base + "resources/jquery.ba-throttle-debounce.min.js",
-    dataType: "script"
+$.when.apply($, promises).then(function() {
+  for (var name in auditors) {
+    $.getScript(base + "auditors/" + name + ".js");
+  }
 });
-
-$.ajax({
-    async: false,
-    url: base + "resources/visibility_changes.js",
-    dataType: "script"
-});
-
-for (var name in auditors) {
-  $.getScript(base + "auditors/" + name + ".js");
-}
 
