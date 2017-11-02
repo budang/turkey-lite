@@ -21,7 +21,7 @@ var auditors = {
 }
 
 /* https://rawgit.com/ */
-var base = "https://cdn.rawgit.com/budang/turkey-lite/48dc246c/";
+var base = "https://cdn.rawgit.com/budang/turkey-lite/48dc246c/js/";
 
 $.ajax({
     async: false,
