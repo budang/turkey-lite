@@ -28,7 +28,8 @@ var promises =
 
 $.when.apply($, promises).then(function() {
   for (var name in auditors) {
-    $.getScript(base + "auditors/" + name + ".js");
+    if (auditors[name])
+      $.getScript(base + "auditors/" + name + ".js");
   }
 });
 
