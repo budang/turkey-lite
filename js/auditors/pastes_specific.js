@@ -3,8 +3,8 @@ var AuditorPastesSpecific = {
   pastes_specific: [],
   log_paste_content: function (e) {
     this.pastes_specific.push({
-      'data' : e.originalEvent.clipboardData.getData('text'),
-      'time' : (new Date()).getTime() - this.start_date.getTime()
+      "data" : e.originalEvent.clipboardData.getData("text"),
+      "time" : (new Date()).getTime() - this.start_date.getTime()
     });
   },
   submit_callable: function () {
@@ -17,12 +17,9 @@ var auditor_pastes_specific = Object.create(AuditorPastesSpecific);
 $(document).ready(function() {
   $("input:text, textarea").bind(
     "paste",
-    function(e) {
-      auditor_pastes_specific
-        .log_paste_content
-        .bind(auditor_pastes_specific)(e);
-    }
-  );
+     auditor_pastes_specific
+      .log_paste_content
+      .bind(auditor_pastes_specific));
 
   $("#mturk_form").submit(function() {
     $("<input />")

@@ -3,8 +3,8 @@ var AuditorKeypressesSpecific = {
   keypresses_specific: [],
   log_keypress_content: function (e) {
     this.keypresses_specific.push({
-      'key' : String.fromCharCode(e.which),
-      'time': (new Date()).getTime() - this.start_date.getTime()
+      "key" : String.fromCharCode(e.which),
+      "time": (new Date()).getTime() - this.start_date.getTime()
     });
   },
   submit_callable: function () {

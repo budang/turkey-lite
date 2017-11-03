@@ -3,14 +3,14 @@ var AuditorClicksSpecific = {
   clicks_specific: [],
   log_click_content: function (e) {
     var dom = {
-      'dom_type'  :   e.target.nodeName.toLowerCase(),
-      'dom_id'    :   e.target.id != '' && e.target.id != undefined
+      "dom_type"  :   e.target.nodeName.toLowerCase(),
+      "dom_id"    :   e.target.id != "" && e.target.id != undefined
                         ? e.target.id : null,
-      'dom_class' :   e.target.className != '' && e.target.className != undefined
+      "dom_class" :   e.target.className != "" && e.target.className != undefined
                         ? e.target.className : null,
-      'dom_name'  :   $(e.target).attr('name') != '' && $(e.target).attr('name') != undefined
-                        ? $(e.target).attr('name') : null,
-      'time'      :   (new Date()).getTime() - this.start_date.getTime()
+      "dom_name"  :   $(e.target).attr("name") != "" && $(e.target).attr("name") != undefined
+                        ? $(e.target).attr("name") : null,
+      "time"      :   (new Date()).getTime() - this.start_date.getTime()
     };
     this.clicks_specific.push(dom);
   },

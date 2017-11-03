@@ -4,9 +4,9 @@ var AuditorMouseMovementSpecific = {
   log_mousemove_specific: function (e) {
     this.mouse_movement_specific.push(
       {
-        'x' : e.pageX,
-        'y' : e.pageY,
-        'time': (new Date()).getTime() - this.start_date.getTime()
+        "x" : e.pageX,
+        "y" : e.pageY,
+        "time": (new Date()).getTime() - this.start_date.getTime()
       }
     );
   },
