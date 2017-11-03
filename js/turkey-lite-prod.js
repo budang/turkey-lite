@@ -21,7 +21,7 @@ var auditors = {
 }
 
 /* https://rawgit.com/ */
-var base = "https://cdn.rawgit.com/budang/turkey-lite/48dc246c/js/";
+var base = "https://cdn.rawgit.com/budang/turkey-lite/d6154a8a/js/";
 var promises =
   [$.getScript(base + "resources/jquery.ba-throttle-debounce.min.js"),
   $.getScript(base + "resources/visibility_changes.js")];

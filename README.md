@@ -15,7 +15,7 @@ The original MmmTurkey was written by [Miles Hutson](https://github.com/CuriousG
 #### Production CDN
 To use `turkey-lite` as-is with all auditors enabled, add the following script to your HTML:
 ```html
-<script src='https://cdn.rawgit.com/budang/turkey-lite/48dc246c/js/turkey-lite-prod.js'></script>
+<script src='https://cdn.rawgit.com/budang/turkey-lite/d6154a8a/js/turkey-lite-prod.js'></script>
 ```
 If you would like to select your own auditors, download the `turkey-lite-prod.js` file, modify it to your needs, then add the script to your HTML:
 ```html
