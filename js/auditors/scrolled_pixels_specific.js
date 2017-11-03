@@ -33,7 +33,7 @@ var AuditorScrolledPixelsSpecific = {
     );
   },
   submit_callable: function () {
-    return this.scrolled_pixels_specific;
+    return JSON.stringify(this.scrolled_pixels_specific);
   }
 };
 

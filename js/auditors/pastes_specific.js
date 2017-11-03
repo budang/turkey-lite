@@ -8,7 +8,7 @@ var AuditorPastesSpecific = {
     });
   },
   submit_callable: function () {
-    return this.pastes_specific;
+    return JSON.stringify(this.pastes_specific);
   }
 };
 
