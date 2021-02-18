@@ -24,7 +24,7 @@ The original MmmTurkey was written by [Miles Hutson](https://github.com/CuriousG
 To use `turkey-lite` as-is with all auditors enabled, add the following script to your HTML:
 
 ```html
-<script src='https://cdn.jsdelivr.net/gh/budang/turkey-lite@master/js/turkey-lite-prod.js</script>
+<script src='https://cdn.jsdelivr.net/gh/budang/turkey-lite@master/js/turkey-lite-prod.js'></script>
 ```
 If you would like to select your own auditors, download the `turkey-lite-prod.js` file, modify it to your needs, then add the script to your HTML:
 ```html
